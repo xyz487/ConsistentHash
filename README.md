@@ -68,3 +68,23 @@ Name93939:0.6989422059059499
 
 ### 结论：
 一致性哈希算法的使用场景时分布式，重点考虑数据的散列程度和速度，不太关注安全性。它解决了数据分片时系统水平伸缩带来的数据失效问题。通过虚拟节点使每个节点均匀散列到环上，避免因数据倾斜导致系统负载不均衡问题。
+
+### 附录：一致性hash核心实现代码
+```java
+SortedMap<Integer, Node> hashCircle = new TreeMap<Integer, Node>();//java 排序树
+
+//初始化一致性hash环
+​		for(Node node : nodes) {
+​			for (int i = 0; i < virtualNums; i++) {
+​				hashCircle.put(hash(node.toString() + i), node);
+​			}
+​		}
+
+//计算key对应的服务器node
+​    int hash = getHash(key);  //计算key的hash值
+​    if (!hashCircle.containsKey(hash)) { //key的hash值是否和虚拟节点的hash相同
+​      SortedMap<Integer, String> tailMap = hashCircle.tailMap(hash);//key的右子树
+​      hash = tailMap.isEmpty() ? hashCircle.firstKey() : tailMap.firstKey();
+​    }
+​    return hashCircle.get(hash);
+```
