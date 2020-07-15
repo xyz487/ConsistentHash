@@ -9,10 +9,10 @@ import com.google.common.hash.Hashing;
  * @Author apple
  * @Date 2020/7/14 7:51 下午
  */
-public class GuavaHashAlgorithm implements HashAlgorithm {
+public class GuavaSha256HashAlgorithm implements HashAlgorithm {
     @Override
     public long generate(String key) {
-        HashFunction hashFunction = Hashing.murmur3_32();
-        return Math.abs(hashFunction.hashUnencodedChars(key).asInt());
+        HashFunction hashFunction = Hashing.sha256();
+        return hashFunction.hashUnencodedChars(key).asLong();
     }
 }

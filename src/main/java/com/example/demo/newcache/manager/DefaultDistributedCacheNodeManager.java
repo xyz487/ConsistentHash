@@ -2,7 +2,7 @@ package com.example.demo.newcache.manager;
 
 import com.example.demo.newcache.Node;
 import com.example.demo.newcache.hash.HashAlgorithm;
-import com.example.demo.newcache.hash.impl.JavaHashCodeAlgorithm;
+import com.example.demo.newcache.hash.impl.JdkCRC32HashAlgorithm;
 import lombok.Setter;
 
 import java.util.*;
@@ -19,7 +19,7 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
     private SortedMap<Long, Node> hashRing = new TreeMap();
 
     //hash生成实现: 默认值使用java的hashcode
-    @Setter HashAlgorithm hashAlgorithm = new JavaHashCodeAlgorithm();
+    @Setter HashAlgorithm hashAlgorithm = new JdkCRC32HashAlgorithm();
 
     @Override
     public void addNode(Node node) {

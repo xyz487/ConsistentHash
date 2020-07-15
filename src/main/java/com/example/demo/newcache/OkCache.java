@@ -1,6 +1,7 @@
 package com.example.demo.newcache;
 
-import com.example.demo.newcache.hash.impl.GuavaHashAlgorithm;
+import com.example.demo.newcache.hash.impl.GuavaMd5HashAlgorithm;
+import com.example.demo.newcache.hash.impl.GuavaSha256HashAlgorithm;
 import com.example.demo.newcache.manager.DefaultDistributedCacheNodeManager;
 
 import java.util.ArrayList;
@@ -62,13 +63,13 @@ public class OkCache implements Cachable {
     public static void main(String[] args) {
         //定义测试数据
         final int DATA_NUM = 1000_0000;
-        final int SERVER_NUM = 100;
+        final int SERVER_NUM = 10;
         final int VNODE_NUM = 100;
 
         //构造节点管理器（虚拟节点数+hash算法）
         DefaultDistributedCacheNodeManager nodeManager = new DefaultDistributedCacheNodeManager();
         nodeManager.setVirtualNodeNum(VNODE_NUM);
-        nodeManager.setHashAlgorithm(new GuavaHashAlgorithm());
+        nodeManager.setHashAlgorithm(new GuavaSha256HashAlgorithm());
 
         IntStream.range(0, SERVER_NUM).forEach(i -> nodeManager.addNode(new Node("node" + i, "192.168.0." + i)));
 
