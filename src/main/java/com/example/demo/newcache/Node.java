@@ -5,6 +5,11 @@ import lombok.Data;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ * @author zhangxy
+ * @date 2020-07-15 17:28:58
+ */
 @Data
 public class Node  implements Cachable {
     private String name;

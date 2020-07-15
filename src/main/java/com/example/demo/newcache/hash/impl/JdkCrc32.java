@@ -1,15 +1,15 @@
 package com.example.demo.newcache.hash.impl;
 
-import com.example.demo.newcache.hash.HashAlgorithm;
+import com.example.demo.newcache.hash.HashGenerateStrategy;
 
 import java.util.zip.CRC32;
 
 /**
- * @Description  通过CRC32生成hash值
- * @Author apple
- * @Date 2020/7/14 7:51 下午
+ *  使用Jdk自带 的CRC32算法实现
+ * @author apple
+ * @date 2020/7/14 7:51 下午
  */
-public class JdkCRC32HashAlgorithm implements HashAlgorithm {
+public class JdkCrc32 implements HashGenerateStrategy {
     @Override
     public long generate(String key) {
         CRC32 crc32 = new CRC32();

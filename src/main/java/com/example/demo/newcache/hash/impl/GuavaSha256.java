@@ -1,15 +1,15 @@
 package com.example.demo.newcache.hash.impl;
 
-import com.example.demo.newcache.hash.HashAlgorithm;
+import com.example.demo.newcache.hash.HashGenerateStrategy;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 
 /**
- * @Description 通过Guava 生成hash值
- * @Author apple
- * @Date 2020/7/14 7:51 下午
+ *  使用Guava 的sha256算法的java实现
+ * @author apple
+ * @date 2020/7/14 7:51 下午
  */
-public class GuavaSha256HashAlgorithm implements HashAlgorithm {
+public class GuavaSha256 implements HashGenerateStrategy {
     @Override
     public long generate(String key) {
         HashFunction hashFunction = Hashing.sha256();
