@@ -2,6 +2,8 @@ package com.example.demo.newcache.manager;
 
 import com.example.demo.newcache.Node;
 
+import java.util.List;
+
 /**
  *  分布式缓存接口定义
  * @author apple
@@ -25,4 +27,12 @@ public interface DistributedCacheNodeManager {
      * @return
      */
     Node lookupNode(String key);
+
+    /**
+     * 获取所有node
+     * @author zhangxy
+     * @date 2020-07-15 18:55:08
+     * @return
+     */
+    List<Node> getAllNode();
 }

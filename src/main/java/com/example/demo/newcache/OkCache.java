@@ -2,6 +2,7 @@ package com.example.demo.newcache;
 
 import com.example.demo.newcache.hash.impl.GuavaSha256;
 import com.example.demo.newcache.manager.DefaultDistributedCacheNodeManager;
+import com.example.demo.newcache.manager.DistributedCacheNodeManager;
 
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
@@ -14,9 +15,9 @@ import java.util.stream.IntStream;
  * @date 2020/7/10 6:30 下午
  */
 public class OkCache implements Cachable {
-    private DefaultDistributedCacheNodeManager manager;
+    private DistributedCacheNodeManager manager;
 
-    public OkCache(DefaultDistributedCacheNodeManager manager) {
+    public OkCache(DistributedCacheNodeManager manager) {
         this.manager = manager;
     }
 

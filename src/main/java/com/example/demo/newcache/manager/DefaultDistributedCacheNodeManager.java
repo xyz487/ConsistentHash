@@ -18,7 +18,7 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
     private List<Node> nodes = new ArrayList<>();
     private SortedMap<Long, Node> hashRing = new TreeMap<>();
 
-    //hash生成实现: 默认值使用JdkCrc32
+    /** hash生成实现: 默认值使用JdkCrc32 */
     @Setter
     HashGenerateStrategy hashGenerateStrategy = new JdkCrc32();
 
@@ -46,6 +46,7 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
         return hashRing.get(index);
     }
 
+    @Override
     public List<Node> getAllNode(){
         return this.nodes;
     }
