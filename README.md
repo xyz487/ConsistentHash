@@ -1,6 +1,10 @@
 ### 一致性哈希实现的缓存(OkCache)
 #### 整体架构
-```mermaid
+
+![架构图](doc/Architecture diagram.svg)
+
+[//]: # (
+mermaid
 graph LR
 Client --> OkCache
 OkCache --> manager{DistributedNodeManager}
@@ -8,7 +12,8 @@ manager -->|一致性哈希选取节点| Node-0
 manager -->|一致性哈希选取节点| Node-1
 manager -->|一致性哈希选取节点| Node-n
 manager -->|一致性哈希选取节点| Node-2的32次方-1
-```
+)
+
 * OkCache（Cache的Client端实现）
 > 提供给用户透明一致的数据存取。
 
