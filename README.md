@@ -3,17 +3,6 @@
 
 ![架构图](./doc/Architecture.jpg)
 
-[//]: # (
-mermaid
-graph LR
-Client --> OkCache
-OkCache --> manager{DistributedNodeManager}
-manager -->|一致性哈希选取节点| Node-0
-manager -->|一致性哈希选取节点| Node-1
-manager -->|一致性哈希选取节点| Node-n
-manager -->|一致性哈希选取节点| Node-2的32次方-1
-)
-
 * OkCache（Cache的Client端实现）
 > 提供给用户透明一致的数据存取。
 
@@ -94,7 +83,7 @@ Name93939:0.6989422059059499
 一致性哈希算法的使用场景时分布式，重点考虑数据的散列程度和速度，不太关注安全性。它解决了数据分片时系统水平伸缩带来的数据失效问题。通过虚拟节点使每个节点均匀散列到环上，避免因数据倾斜导致系统负载不均衡问题。
 
 ### 附录：一致性hash核心实现代码
-```java
+```text
     SortedMap<Integer, Node> hashCircle = new TreeMap<Integer, Node>();//java 排序树
 
     //初始化一致性hash环
