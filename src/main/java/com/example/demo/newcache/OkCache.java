@@ -1,8 +1,8 @@
 package com.example.demo.newcache;
 
 import com.example.demo.newcache.hash.impl.GuavaSha256;
-import com.example.demo.newcache.manager.DefaultDistributedCacheNodeManager;
-import com.example.demo.newcache.manager.DistributedCacheNodeManager;
+import com.example.demo.newcache.manager.ConsistentHashDistributedNodeManager;
+import com.example.demo.newcache.manager.DistributedNodeManager;
 
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
@@ -10,14 +10,16 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- *
+ * Cache的Client端实现
+ * 通过DistributedNodeManager与Server端交互，实现数据的put和get。
+ * 分布式数据水平伸缩扩缩容的数据访问一致性，由DistributedNodeManager的一致性hash算法来保证，对客户端透明
  * @author apple
  * @date 2020/7/10 6:30 下午
  */
 public class OkCache implements Cachable {
-    private DistributedCacheNodeManager manager;
+    private DistributedNodeManager manager;
 
-    public OkCache(DistributedCacheNodeManager manager) {
+    public OkCache(DistributedNodeManager manager) {
         this.manager = manager;
     }
 
@@ -67,7 +69,7 @@ public class OkCache implements Cachable {
         final int vnodeNum = 100;
 
         //构造节点管理器（虚拟节点数+hash算法）
-        DefaultDistributedCacheNodeManager nodeManager = new DefaultDistributedCacheNodeManager();
+        ConsistentHashDistributedNodeManager nodeManager = new ConsistentHashDistributedNodeManager();
         nodeManager.setVirtualNums(vnodeNum);
         nodeManager.setHashGenerateStrategy(new GuavaSha256());
 

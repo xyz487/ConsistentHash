@@ -1,4 +1,23 @@
 ### 一致性哈希实现的缓存(OkCache)
+#### 整体架构
+```mermaid
+graph LR
+Client --> OkCache
+OkCache --> manager{DistributedNodeManager}
+manager -->|一致性哈希选取节点| Node-0
+manager -->|一致性哈希选取节点| Node-1
+manager -->|一致性哈希选取节点| Node-n
+manager -->|一致性哈希选取节点| Node-2的32次方-1
+```
+* OkCache（Cache的Client端实现）
+> 提供给用户透明一致的数据存取。
+
+* DistributedNodeManager（分布式节点管理器）
+> 1. 管理节点
+> 2. 提供key和节点的对应关系算法，实现分布式数据水平伸缩扩缩容的数据访问一致性。
+
+* Node（Cache的Server端实现）
+> 真正的数据存储与获取。
 
 测试输入：1000w个数据，100个服务器，每台服务器100个虚拟节点
 >注意：测试数据较大，需设置jvm参数（`VM options: -Xms2g -Xmx2g `）

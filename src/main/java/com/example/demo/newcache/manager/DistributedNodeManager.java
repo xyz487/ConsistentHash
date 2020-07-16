@@ -9,7 +9,7 @@ import java.util.List;
  * @author apple
  * @date 2020/7/10 6:13 下午
  */
-public interface DistributedCacheNodeManager {
+public interface DistributedNodeManager {
     /**
      * 添加节点
      * @author zhangxy

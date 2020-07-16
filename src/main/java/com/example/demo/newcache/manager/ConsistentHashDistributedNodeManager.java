@@ -12,7 +12,7 @@ import java.util.*;
  * @author apple
  * @date 2020/7/14 8:06 下午
  */
-public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeManager {
+public class ConsistentHashDistributedNodeManager implements DistributedNodeManager {
     //虚拟节点数:默认值100
     @Setter  private int virtualNums = 100;
     private List<Node> nodes = new ArrayList<>();
@@ -43,7 +43,7 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
         long nodeHash = tailMap.isEmpty() ? hashRing.firstKey() : tailMap.firstKey();
         return hashRing.get(nodeHash);
     }
-    
+
     @Override
     public List<Node> getAllNode(){
         return this.nodes;
