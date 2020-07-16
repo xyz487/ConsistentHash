@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeManager {
     //虚拟节点数:默认值100
-    @Setter  private int virtualNodeNum = 100;
+    @Setter  private int virtualNums = 100;
     private List<Node> nodes = new ArrayList<>();
     private SortedMap<Long, Node> hashRing = new TreeMap<>();
 
@@ -25,7 +25,7 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
     @Override
     public void addNode(Node node) {
         this.nodes.add(node);
-        for (int i = 0; i < virtualNodeNum; i++) {
+        for (int i = 0; i < virtualNums; i++) {
             String key = String.format("%s_%d", node.getIp(), i);
             long hash= hashGenerateStrategy.generate(key);
             hashRing.put(hash, node);
@@ -35,17 +35,15 @@ public class DefaultDistributedCacheNodeManager implements DistributedCacheNodeM
     @Override
     public Node lookupNode(String key) {
         long hashCode = hashGenerateStrategy.generate(key);
-        return  findValidNode(hashCode);
-    }
 
-    private Node findValidNode(long hashCode){
         // 获取key值大于等于hashCode的子环
-        SortedMap<Long, Node> subRing = hashRing.tailMap(hashCode);
-        // 不为空：取出最近的节点；否则：取环第一个节点
-        long index = !subRing.isEmpty() ?  subRing.firstKey() : hashRing.firstKey();
-        return hashRing.get(index);
-    }
+        SortedMap<Long, Node> tailMap = hashRing.tailMap(hashCode);
 
+        // 顺时针找出最近的Node节点
+        long nodeHash = tailMap.isEmpty() ? hashRing.firstKey() : tailMap.firstKey();
+        return hashRing.get(nodeHash);
+    }
+    
     @Override
     public List<Node> getAllNode(){
         return this.nodes;

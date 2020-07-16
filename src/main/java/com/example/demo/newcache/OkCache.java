@@ -68,7 +68,7 @@ public class OkCache implements Cachable {
 
         //构造节点管理器（虚拟节点数+hash算法）
         DefaultDistributedCacheNodeManager nodeManager = new DefaultDistributedCacheNodeManager();
-        nodeManager.setVirtualNodeNum(vnodeNum);
+        nodeManager.setVirtualNums(vnodeNum);
         nodeManager.setHashGenerateStrategy(new GuavaSha256());
 
         IntStream.range(0, serverNum).forEach(i -> nodeManager.addNode(new Node("node" + i, "192.168.0." + i)));
