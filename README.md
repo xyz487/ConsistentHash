@@ -1,7 +1,7 @@
 ### 一致性哈希实现的缓存(OkCache)
 #### 整体架构
 
-![架构图](doc/Architecture.jpg)
+![架构图](docs/img/Architecture.jpg)
 
 * OkCache（Cache的Client端实现）
 > 提供给用户透明一致的数据存取。
