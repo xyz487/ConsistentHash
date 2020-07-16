@@ -1,7 +1,7 @@
 ### 一致性哈希实现的缓存(OkCache)
 #### 整体架构
 
-![架构图](./doc/Architecture diagram.jpg)
+![架构图](./doc/Architecture.jpg)
 
 [//]: # (
 mermaid
