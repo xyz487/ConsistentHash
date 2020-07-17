@@ -1,6 +1,6 @@
-package com.example.demo.newcache.manager;
+package com.zxy.learn.cache.manager;
 
-import com.example.demo.newcache.Node;
+import com.zxy.learn.cache.Node;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.example.demo.newcache.manager;
+package com.zxy.learn.cache.manager;
 
-import com.example.demo.newcache.Node;
-import com.example.demo.newcache.hash.HashGenerateStrategy;
-import com.example.demo.newcache.hash.impl.JdkCrc32;
+import com.zxy.learn.cache.Node;
+import com.zxy.learn.cache.hash.HashGenerateStrategy;
+import com.zxy.learn.cache.hash.impl.JdkCrc32;
 import lombok.Setter;
 
 import java.util.*;

@@ -1,8 +1,8 @@
-package com.example.demo.newcache;
+package com.zxy.learn.cache;
 
-import com.example.demo.newcache.hash.impl.GuavaSha256;
-import com.example.demo.newcache.manager.ConsistentHashDistributedNodeManager;
-import com.example.demo.newcache.manager.DistributedNodeManager;
+import com.zxy.learn.cache.hash.impl.GuavaSha256;
+import com.zxy.learn.cache.manager.ConsistentHashDistributedNodeManager;
+import com.zxy.learn.cache.manager.DistributedNodeManager;
 
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
