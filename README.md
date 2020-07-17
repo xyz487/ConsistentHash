@@ -10,7 +10,7 @@
 
 ## 整体架构
 
-![架构图](docs/img/Architecture.jpg)
+![架构图](docs/img/Architecture.png)
 备注：所有数据分片存储到所以节点，当移除或增加1个node，仅影响差不多一个节点数据量的数据访问不到，其他90%的数据仍能一致性的获取到。
 
 * OkCache（Cache的Client端实现）
