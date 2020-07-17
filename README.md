@@ -111,13 +111,14 @@ Name93939:0.6989422059059499
     return hashCircle.get(hash);
 ```
 ### 一致性哈希：环搜索
-<img src="https://s1.ax1x.com/2020/07/17/UyjrvT.png" border="0" height="511" width="409"/>
+
+<center><img src="https://s1.ax1x.com/2020/07/17/UyjrvT.png" border="0" height="511" width="409"/></center>
 
 ### 一致性哈希：虚拟节点
 
-<div style="margin: 20; padding: 20">
-    <div style="float:left;padding-right: 20px;"><img src="https://s1.ax1x.com/2020/07/17/UyjyKU.png" border="0" height="511" width="409"/></div>
-    <div style="float:left"><img src="https://s1.ax1x.com/2020/07/17/UyjD2V.png" border="0" height="495" width="396"/></div>
-</div>
-
- 
+<center>
+<figure>
+<img src="https://s1.ax1x.com/2020/07/17/UyjyKU.png" border="0" height="511" width="409"/>
+<img src="https://s1.ax1x.com/2020/07/17/UyjD2V.png" border="0" height="495" width="396"/>
+</figure>
+</center>
