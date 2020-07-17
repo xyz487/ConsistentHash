@@ -1,4 +1,4 @@
-# <img src="https://s1.ax1x.com/2020/07/17/UygHHg.th.png" border="0"/> 一致性哈希实现的缓存(OkCache)
+# <img src="https://s1.ax1x.com/2020/07/17/UygHHg.th.png" border="0" height="25" width="25"/> 一致性哈希实现的缓存(OkCache)
 
 ![license](https://img.shields.io/github/license/xyz487/ConsistentHash)
 ![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)
