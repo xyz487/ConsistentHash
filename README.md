@@ -1,5 +1,14 @@
-### 一致性哈希实现的缓存(OkCache)
-#### 整体架构
+# <img src="https://s1.ax1x.com/2020/07/17/UygHHg.th.png" border="0" height="30" width="30"/> 一致性哈希实现的缓存(OkCache)
+
+![license](https://img.shields.io/github/license/xyz487/ConsistentHash)
+![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)
+![Java CI with Maven](https://github.com/xyz487/ConsistentHash/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+![GitHub followers](https://img.shields.io/github/followers/xyz487?style=social)
+![GitHub forks](https://img.shields.io/github/forks/xyz487/ConsistentHash?style=social)
+![GitHub stars](https://img.shields.io/github/stars/xyz487/ConsistentHash?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/xyz487/ConsistentHash?style=social)
+
+## 整体架构
 
 ![架构图](docs/img/Architecture.jpg)
 备注：所有数据分片存储到所以节点，当移除或增加1个node，仅影响差不多一个节点数据量的数据访问不到，其他90%的数据仍能一致性的获取到。
@@ -17,7 +26,7 @@
 测试输入：1000w个数据，100个服务器，每台服务器100个虚拟节点
 >注意：测试数据较大，需设置jvm参数（`VM options: -Xms2g -Xmx2g `）
 
-#### 相同数据，算法不同：测试结果
+## 相同数据，算法不同：测试结果
 1. ##### 采用CRC32的hash算法
 ```text
 开始存储10000000个kv数据
@@ -80,10 +89,10 @@ Name93939:0.6989422059059499
 ```
 > 虚拟节点越大，标准差百分比越小，分布越均匀
 
-### 结论：
+## 结论：
 一致性哈希算法的使用场景时分布式，重点考虑数据的散列程度和速度，不太关注安全性。它解决了数据分片时系统水平伸缩带来的数据失效问题。通过虚拟节点使每个节点均匀散列到环上，避免因数据倾斜导致系统负载不均衡问题。
 
-### 附录：一致性hash核心实现代码
+## 附录：一致性hash核心实现代码
 ```text
     SortedMap<Integer, Node> hashCircle = new TreeMap<Integer, Node>();//java 排序树
 
