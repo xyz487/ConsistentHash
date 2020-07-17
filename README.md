@@ -7,7 +7,7 @@
 [![star this repo](http://githubbadges.com/star.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash)
 [![fork this repo](http://githubbadges.com/fork.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash/fork)
 
-#### 整体架构
+## 整体架构
 
 ![架构图](docs/img/Architecture.jpg)
 备注：所有数据分片存储到所以节点，当移除或增加1个node，仅影响差不多一个节点数据量的数据访问不到，其他90%的数据仍能一致性的获取到。
@@ -25,7 +25,7 @@
 测试输入：1000w个数据，100个服务器，每台服务器100个虚拟节点
 >注意：测试数据较大，需设置jvm参数（`VM options: -Xms2g -Xmx2g `）
 
-#### 相同数据，算法不同：测试结果
+## 相同数据，算法不同：测试结果
 1. ##### 采用CRC32的hash算法
 ```text
 开始存储10000000个kv数据
@@ -88,10 +88,10 @@ Name93939:0.6989422059059499
 ```
 > 虚拟节点越大，标准差百分比越小，分布越均匀
 
-### 结论：
+## 结论：
 一致性哈希算法的使用场景时分布式，重点考虑数据的散列程度和速度，不太关注安全性。它解决了数据分片时系统水平伸缩带来的数据失效问题。通过虚拟节点使每个节点均匀散列到环上，避免因数据倾斜导致系统负载不均衡问题。
 
-### 附录：一致性hash核心实现代码
+## 附录：一致性hash核心实现代码
 ```text
     SortedMap<Integer, Node> hashCircle = new TreeMap<Integer, Node>();//java 排序树
 
