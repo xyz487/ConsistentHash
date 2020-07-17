@@ -1,9 +1,12 @@
-# 一致性哈希实现的缓存(OkCache)
-![Build Status](https://travis-ci.org/xyz487/ConsistentHash.svg?branch=master)
-[![codecov](https://codecov.io/gh/xyz487/ConsistentHash/branch/master/graph/badge.svg)](https://codecov.io/gh/xyz487/ConsistentHash)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)](http://isitmaintained.com/project/xyz487/ConsistentHash "Percentage of issues still open")
+# <img src="https://s1.ax1x.com/2020/07/17/UygHHg.th.png" border="0"/> 一致性哈希实现的缓存(OkCache)
+
+![license](https://img.shields.io/github/license/xyz487/ConsistentHash)
+![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)
 ![Java CI with Maven](https://github.com/xyz487/ConsistentHash/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
-![license](https://img.shields.io/github/license/xyz487/ConsistentHash.svg)
+![GitHub followers](https://img.shields.io/github/followers/xyz487?style=social)
+![GitHub forks](https://img.shields.io/github/forks/xyz487/ConsistentHash?style=social)
+![GitHub stars](https://img.shields.io/github/stars/xyz487/ConsistentHash?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/xyz487/ConsistentHash?style=social)
 
 ## 整体架构
 
