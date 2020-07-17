@@ -113,17 +113,13 @@ Name93939:0.6989422059059499
 ### 一致性哈希：环搜索
 
 <center class="half">
-    <img src="https://s1.ax1x.com/2020/07/17/UyjrvT.png" border="0" height="511" width="409"/>
+    <img src="https://s1.ax1x.com/2020/07/17/UyjrvT.png" border="0" height="51" width="40"/>
 </center>
 
 ### 一致性哈希：虚拟节点
 
 <center class="half">
-    <img src="https://s1.ax1x.com/2020/07/17/UyjyKU.png" border="0" height="511" width="409"/>
-    <img src="https://s1.ax1x.com/2020/07/17/UyjD2V.png" border="0" height="495" width="396"/>
+    <img src="https://s1.ax1x.com/2020/07/17/UyjyKU.png" border="0" height="51" width="40"/>
+    <img src="https://s1.ax1x.com/2020/07/17/UyjD2V.png" border="0" height="49" width="39"/>
 </center>
 
-<figure class="third">
-    <img src="https://s1.ax1x.com/2020/07/17/UyjyKU.png" border="0" height="511" width="409"/>
-    <img src="https://s1.ax1x.com/2020/07/17/UyjD2V.png" border="0" height="495" width="396"/>
-</figure>
