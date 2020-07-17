@@ -14,14 +14,12 @@
 备注：所有数据分片存储到所以节点，当移除或增加1个node，仅影响差不多一个节点数据量的数据访问不到，其他90%的数据仍能一致性的获取到。
 
 * OkCache（Cache的Client端实现）
-> 提供给用户透明一致的数据存取。
-
+提供给用户透明一致的数据存取。
 * DistributedNodeManager（分布式节点管理器）
-> 1. 管理节点
-> 2. 提供key和节点的对应关系算法，实现分布式数据水平伸缩扩缩容的数据访问一致性。
-
+1. 管理节点
+2. 提供key和节点的对应关系算法，实现分布式数据水平伸缩扩缩容的数据访问一致性。
 * Node（Cache的Server端实现）
-> 真正的数据存储与获取。
+真正的数据存储与获取。
 
 测试输入：1000w个数据，100个服务器，每台服务器100个虚拟节点
 >注意：测试数据较大，需设置jvm参数（`VM options: -Xms2g -Xmx2g `）
@@ -92,7 +90,8 @@ Name93939:0.6989422059059499
 ## 结论：
 一致性哈希算法的使用场景时分布式，重点考虑数据的散列程度和速度，不太关注安全性。它解决了数据分片时系统水平伸缩带来的数据失效问题。通过虚拟节点使每个节点均匀散列到环上，避免因数据倾斜导致系统负载不均衡问题。
 
-## 附录：一致性hash核心实现代码
+## 附录：
+### 一致性hash核心实现代码
 ```text
     SortedMap<Integer, Node> hashCircle = new TreeMap<Integer, Node>();//java 排序树
 
@@ -111,3 +110,9 @@ Name93939:0.6989422059059499
 ​   }
     return hashCircle.get(hash);
 ```
+### 一致性哈希：环搜索
+[![UyjrvT.png](https://s1.ax1x.com/2020/07/17/UyjrvT.png)](https://imgchr.com/i/UyjrvT)
+
+### 一致性哈希：虚拟节点
+[![UyjD2V.png](https://s1.ax1x.com/2020/07/17/UyjD2V.png)](https://imgchr.com/i/UyjD2V)
+[![UyjyKU.png](https://s1.ax1x.com/2020/07/17/UyjyKU.png)](https://imgchr.com/i/UyjyKU)
