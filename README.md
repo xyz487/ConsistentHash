@@ -4,8 +4,6 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)](http://isitmaintained.com/project/xyz487/ConsistentHash "Percentage of issues still open")
 ![Java CI with Maven](https://github.com/xyz487/ConsistentHash/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
 ![license](https://img.shields.io/github/license/xyz487/ConsistentHash.svg)
-[![star this repo](http://githubbadges.com/star.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash)
-[![fork this repo](http://githubbadges.com/fork.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash/fork)
 
 ## 整体架构
 
