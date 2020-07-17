@@ -1,6 +1,6 @@
-package com.example.demo.newcache.hash.impl;
+package com.zxy.learn.cache.hash.impl;
 
-import com.example.demo.newcache.hash.HashGenerateStrategy;
+import com.zxy.learn.cache.hash.HashGenerateStrategy;
 
 import java.util.zip.CRC32;
 

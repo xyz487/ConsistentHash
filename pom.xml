@@ -8,10 +8,10 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<groupId>com.zxy.learn</groupId>
+	<artifactId>okcache</artifactId>
+	<version>1.0.0-RELEASE</version>
+	<name>OkCache</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

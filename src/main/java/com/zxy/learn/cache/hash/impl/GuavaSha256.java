@@ -1,6 +1,6 @@
-package com.example.demo.newcache.hash.impl;
+package com.zxy.learn.cache.hash.impl;
 
-import com.example.demo.newcache.hash.HashGenerateStrategy;
+import com.zxy.learn.cache.hash.HashGenerateStrategy;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 

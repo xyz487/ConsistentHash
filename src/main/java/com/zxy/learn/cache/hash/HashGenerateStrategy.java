@@ -1,4 +1,4 @@
-package com.example.demo.newcache.hash;
+package com.zxy.learn.cache.hash;
 
 /**
  * 哈希生成策略
