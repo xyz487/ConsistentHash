@@ -1,4 +1,12 @@
-### 一致性哈希实现的缓存(OkCache)
+# 一致性哈希实现的缓存(OkCache)
+![Build Status](https://travis-ci.org/xyz487/ConsistentHash.svg?branch=master)
+[![codecov](https://codecov.io/gh/xyz487/ConsistentHash/branch/master/graph/badge.svg)](https://codecov.io/gh/xyz487/ConsistentHash)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/xyz487/ConsistentHash.svg)](http://isitmaintained.com/project/xyz487/ConsistentHash "Percentage of issues still open")
+![Java CI with Maven](https://github.com/xyz487/ConsistentHash/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+![license](https://img.shields.io/github/license/xyz487/ConsistentHash.svg)
+[![star this repo](http://githubbadges.com/star.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash)
+[![fork this repo](http://githubbadges.com/fork.svg?user=xyz487&repo=ConsistentHash&style=flat)](https://github.com/xyz487/ConsistentHash/fork)
+
 #### 整体架构
 
 ![架构图](docs/img/Architecture.jpg)
